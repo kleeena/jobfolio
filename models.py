@@ -23,3 +23,12 @@ class JobApplication(SQLModel, table=True):
     interview_stage : str = Field(nullable=False)
     notes : str 
 
+class Resume(SQLModel, table=True):
+    id : int = Field(primary_key=True)
+    version_name : str = Field(nullable=False)
+    created_at : date = Field(nullable=False, default_factory=date.today)
+    description : str 
+    file_url : str = Field(nullable=False)
+    is_active : bool = Field(nullable=False)
+    target_roles : str = Field(nullable=False)
+
