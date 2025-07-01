@@ -13,3 +13,13 @@ class User(SQLModel, table=True):
     email : EmailStr = Field(unique=True)
     password_hash: str =  Field()
 
+class JobApplication(SQLModel, table=True):
+    id : int = Field(primary_key=True)
+    date_created : date = Field(nullable=False, default_factory=date.today)
+    role : str = Field(nullable=False, index=True)
+    company_name : str = Field(nullable=False)
+    source : str = Field(nullable=False)
+    applicaton_status : str = Field(nullable=False)
+    interview_stage : str = Field(nullable=False)
+    notes : str 
+
