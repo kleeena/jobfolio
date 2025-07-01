@@ -1,4 +1,3 @@
-from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, Query
 from sqlmodel import Field, Session, SQLModel, create_engine, select
@@ -21,7 +20,8 @@ class JobApplication(SQLModel, table=True):
     source : str = Field(nullable=False)
     applicaton_status : str = Field(nullable=False)
     interview_stage : str = Field(nullable=False)
-    notes : str 
+    notes : str
+    user_id : int | None = Field( default= None, foreign_key='user.id') 
 
 class Resume(SQLModel, table=True):
     id : int = Field(primary_key=True)
@@ -31,4 +31,6 @@ class Resume(SQLModel, table=True):
     file_url : str = Field(nullable=False)
     is_active : bool = Field(nullable=False)
     target_roles : str = Field(nullable=False)
+    user_id : int | None = Field(default= None, foreign_key= 'user.id')
+
 
