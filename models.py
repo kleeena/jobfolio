@@ -6,14 +6,14 @@ from datetime import date
 
 
 class User(SQLModel, table=True):
-    id : int = Field(primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     first_name : str = Field(nullable=False)
     last_name : str = Field(nullable=False)
     email : EmailStr = Field(unique=True)
     password_hash: str =  Field()
 
 class JobApplication(SQLModel, table=True):
-    id : int = Field(primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)
     date_created : date = Field(nullable=False, default_factory=date.today)
     role : str = Field(nullable=False, index=True)
     company_name : str = Field(nullable=False)
@@ -24,7 +24,7 @@ class JobApplication(SQLModel, table=True):
     user_id : Optional[int] = Field( default= None, foreign_key='user.id') 
 
 class Resume(SQLModel, table=True):
-    id : int = Field(primary_key=True)
+    id: Optional[int] = Field(default=None, primary_key=True)    
     version_name : str = Field(nullable=False)
     created_at : date = Field(nullable=False, default_factory=date.today)
     description : str 
