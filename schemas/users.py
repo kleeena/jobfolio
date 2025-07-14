@@ -19,6 +19,15 @@ class UserCreate(BaseModel):
         session.commit()
         session.refresh(user_db)
         return user_db
+    
+
+class UserUpdate(UserCreate):
+    first_name : str | None = None
+    last_name : str | None = None
+    email : EmailStr | None = None
+    password_hash : str | None = None
+    
+
 
 
 
