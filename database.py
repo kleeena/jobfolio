@@ -18,7 +18,6 @@ def create_db_tables(engine):
         if 'database.db' not in os.listdir():
             SQLModel.metadata.create_all(engine)
     except:
-        raise('A problem occurred while building the database.')
     
 SessionDep = Annotated[Session, Depends(get_session)]
 
