@@ -3,7 +3,7 @@ from sqlmodel import select
 
 from schemas.resume import CreateResume, UpdateResume
 from db.database import SessionDep
-from models import Resume
+from models.models import Resume
 
 router = APIRouter()
 

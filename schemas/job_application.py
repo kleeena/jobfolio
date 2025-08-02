@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, Literal
-from models import JobApplication
+
+from models.models import JobApplication
 from db.database import SessionDep
 
 class CreateJobApp(BaseModel):

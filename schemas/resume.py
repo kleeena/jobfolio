@@ -3,7 +3,7 @@ from pydantic.networks import AnyUrl
 from typing import Optional
 
 from db.database import SessionDep
-from models import Resume
+from models.models import Resume
 
 class ResumeBase(BaseModel):
     id: int

@@ -1,7 +1,7 @@
 from fastapi import Depends
 import os
 from sqlmodel import Field, SQLModel, create_engine, Session
-from models import User, Resume, JobApplication
+from models.models import User, Resume, JobApplication
 from typing import Annotated
 
 os.makedirs("db", exist_ok=True)

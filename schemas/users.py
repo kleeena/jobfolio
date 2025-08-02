@@ -2,7 +2,7 @@ from pydantic import BaseModel, EmailStr
 from sqlmodel import Field
 
 from db.database import SessionDep
-from models import User
+from models.models import User
 
 class UserCreate(BaseModel):
     first_name: str = Field(nullable=False)

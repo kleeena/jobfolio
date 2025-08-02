@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from sqlalchemy import select
 
 from db.database import SessionDep, get_session
-from models import JobApplication
+from models.models import JobApplication
 from schemas.job_application import CreateJobApp, UpdateJobApp
 
 
