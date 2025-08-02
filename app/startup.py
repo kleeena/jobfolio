@@ -1,6 +1,7 @@
 from fastapi import  FastAPI 
-from database import create_db_tables, engine, SessionDep
+from db.database import create_db_tables, engine, SessionDep
 from contextlib import asynccontextmanager
+
 
 
 @asynccontextmanager

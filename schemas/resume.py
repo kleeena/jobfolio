@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from pydantic.networks import AnyUrl
 from typing import Optional
 
-from database import SessionDep
+from db.database import SessionDep
 from models import Resume
 
 class ResumeBase(BaseModel):
@@ -50,7 +50,7 @@ class UpdateResume(BaseModel):
         if not resume_db:
             raise HTTPException(status_code = 404, detail= "Resume not found")
         updated_resume_data = self.model_dump(exclude_unset=True)
-        resume_db.sqlmodel_update(resume_data)
+        resume_db.sqlmodel_update(updated_resume_data)
         session.add(resume_db)
         session.commit()
         session.refresh(resume_db)

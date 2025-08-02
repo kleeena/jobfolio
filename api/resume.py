@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from sqlmodel import select
 
 from schemas.resume import CreateResume, UpdateResume
-from database import SessionDep
+from db.database import SessionDep
 from models import Resume
 
 router = APIRouter()

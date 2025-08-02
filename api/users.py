@@ -1,7 +1,8 @@
-from database import SessionDep, get_session
+from fastapi import APIRouter, HTTPException
+
+from db.database import SessionDep, get_session
 from models import User, JobApplication, Resume
 from schemas.users import UserCreate, UserUpdate
-from fastapi import APIRouter, HTTPException
 
 router = APIRouter()
 
