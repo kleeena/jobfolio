@@ -1,5 +1,5 @@
 ## Jobfolio
-**Jobfolio** is an open-source, web-based application built using **FastAPI**, that runs locally and helps simplify the job application process. It allows users to track job applications, manage resume versions, and monitor key performance indicators (KPIs) — all from a user-friendly browser interface.
+**Jobfolio** is an open-source, web-based application built using **FastAPI**, that runs locally and helps simplify the job application process. It allows users to track job applications, manage resume versions, and monitor key performance indicators (KPIs) — all from a user-friendly browser interface (to be developed).
 
 ## How to Install and Run the Project
 1.  Clone the repository
